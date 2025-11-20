@@ -1,0 +1,34 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+/* Farver */
+html {
+  --green: #d0ffcd;
+  --ashbrown: #5f5454;
+  --taupe: #9b9886;
+  --light_green: #e9f0e6;
+  --white: #fffffa;
+  scroll-behavior: smooth;
+  width: 100vw;
+}
+
+p {
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: light;
+}
