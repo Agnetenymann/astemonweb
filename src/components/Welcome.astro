@@ -1,0 +1,87 @@
+---
+import TextButton from "./TextButton.astro";
+import "../styles/generel.css";
+---
+
+<section class="intro-section">
+  <div class="intro-inner">
+    <div class="intro-text">
+      <h2 class="intro-title">WELCOME TO ASTEMON</h2>
+
+      <p class="intro-lead">
+        <em>Welcome to ASTEMON!</em>
+        Your go-to guide for sorting waste in Lisbon without the confusion.
+      </p>
+
+      <p>
+        Whether you’re here for a weekend, a semester, or a new chapter of life,
+        we’ll help you recycle right, find the nearest bins, and understand what
+        really happens to your trash (spoiler: it’s more interesting than you
+        think!).
+      </p>
+
+      <p>Let’s make Lisbon cleaner, one sorted bin at a time.</p>
+    </div>
+
+    <div class="intro-cta">
+      <TextButton buttontext="WE GOT YOU →" buttonurl="/guide" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro-section {
+    background-color: var(--light_green);
+    padding: 4rem 1.5rem;
+  }
+
+  .intro-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .intro-text {
+    max-width: 600px;
+  }
+
+  .intro-title {
+    margin: 0 0 1rem;
+  }
+
+  .intro-lead {
+    margin: 0 0 1.5rem;
+  }
+
+  .intro-text p + p {
+    margin-top: 0.75rem;
+  }
+
+  .intro-cta {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 12rem;
+  }
+
+  @media (max-width: 900px) {
+    .intro-section {
+      padding: 3rem 2.5rem;
+    }
+
+    .intro-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    .intro-cta {
+      justify-content: flex-start;
+      margin-top: 1rem;
+    }
+  }
+</style>

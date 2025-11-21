@@ -1,0 +1,63 @@
+---
+import "../styles/generel.css";
+
+export interface Props {
+  buttontext: string;
+  buttonurl: string;
+  maxWidth: string;
+}
+
+const { buttontext, buttonurl, maxWidth } = Astro.props;
+const btnStyle = `max-width: ${maxWidth};`;
+---
+
+<a href={buttonurl} class="outline-btn outline-btn--wide" style={btnStyle}>
+  <span class="btn-text">{buttontext}</span>
+  <span class="btn-arrow">→</span>
+</a>
+
+<style>
+  .outline-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between; /* tekst venstre, pil højre */
+    gap: 0.75rem;
+
+    padding: 0.75rem 1.75rem;
+    border: 1px solid var(--ashbrown);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    color: var(--ashbrown);
+    font-family: "Archivo Narrow", sans-serif;
+
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* --- Pil default (MOBIL) --- */
+  .btn-arrow {
+    font-size: 1.5rem;
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  /* --- HOVER-EFFEKT (DESKTOP) --- */
+  @media (min-width: 800px) {
+    /* pilen skal være usynlig før hover */
+    .btn-arrow {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+
+    /* pilen kommer ind ved hover */
+    .outline-btn:hover .btn-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>

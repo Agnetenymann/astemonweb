@@ -20,7 +20,7 @@ html {
   --green: #d0ffcd;
   --ashbrown: #5f5454;
   --taupe: #9b9886;
-  --light_green: #e9f0e6;
+  --light_green: #f7fff4;
   --white: #fffffa;
   scroll-behavior: smooth;
   width: 100vw;
@@ -31,4 +31,13 @@ p {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: light;
+  color: var(--ashbrown);
+  font-size: 0.9rem;
+}
+
+h2 {
+  font-family: "Archivo Narrow", sans-serif;
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: var(--ashbrown);
 }
