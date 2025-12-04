@@ -1,13 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
+import IESection from "../components/IESection.astro";
+import DidYouKnow from "../components/DidYouKnow.astro";
+import DecomSection from "../components/DecomSection.astro";
 ---
 
 <Layout>
-  <h1>cycle</h1>
+  <IESection />
   <Banner
-    h3_1="SORTING GUIDE"
-    h3_2="WASTE EXPERIENCE"
-    h3_3="THE CYCLE OF LIFE"
+    h3_1="WHAT TYPE OF TRASH ARE YOU?"
+    h3_2="WHICH BIN WOULD YOU BELONG IN?"
+    h3_3="HOW LONG WILL IT TAKE YOU TO DECOMPOSE?"
   />
+  <DidYouKnow />
+  <DecomSection />
 </Layout>

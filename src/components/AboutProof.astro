@@ -1,0 +1,119 @@
+---
+import "../styles/generel.css";
+import TextButton from "./TextButton.astro";
+---
+
+<section class="about">
+  <div class="about-section__inner about-grid">
+    <div class="about-text">
+      <p>
+        Through our user research, including interviews and surveys with expats,
+        tourists and exchange students, our initial concerns were proven true.
+        The majority of participants said they find Lisbon’s waste sorting
+        system unclear and difficult to access in English.
+      </p>
+
+      <p class="about-stats">
+        <strong>100%</strong> of respondents said waste sorting information is not
+        easily available.
+        <br />
+        <strong>50%</strong> admitted they are not familiar with how the system works
+        at all.
+      </p>
+
+      <p>
+        At the same time, people expressed genuine motivation to recycle and act
+        sustainably — they just needed the right tools. These insights confirmed
+        the need for Astemon: a clear, user-friendly platform that helps
+        newcomers understand how to sort correctly and feel part of Lisbon’s
+        circular community.
+      </p>
+    </div>
+
+    <div class="about-right">
+      <h1>PROOF</h1>
+      <TextButton
+        buttontext="SEE OUR SURVEY RESULTS →"
+        buttonurl="/googleform.pdf"
+        target="_blank"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    border-bottom: 0.5px solid var(--ashbrown);
+  }
+
+  .about-section__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 3.25rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  strong {
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .about-title {
+    font-family: "Lexend Giga", system-ui, sans-serif;
+    font-size: 2.4rem;
+    letter-spacing: 0.22em;
+    line-height: 1.1;
+    margin: 0 0 2rem;
+  }
+
+  .about-icon img {
+    max-width: 180px;
+    opacity: 0.25;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .about-text p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    max-width: 40rem;
+  }
+
+  @media (max-width: 900px) {
+    .about-section__inner {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .about-title {
+      font-size: 2rem;
+    }
+    .about-right {
+      grid-row: 1;
+    }
+    h1 {
+      margin-bottom: 0rem;
+    }
+    .about-text {
+      grid-row: 2;
+    }
+
+    .about-title {
+      font-size: 2rem;
+    }
+  }
+</style>

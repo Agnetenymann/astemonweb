@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import HEADER2 from "../components/HEADER2.astro";
 ---
 
 <!doctype html>
@@ -8,6 +9,10 @@ import Footer from "../components/Footer.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Astemon — a clear, user-friendly guide to waste sorting in Lisbon. Learn how to recycle, find bins, and explore interactive educational tools."
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <title>ASTEMON</title>
@@ -45,7 +50,7 @@ import Footer from "../components/Footer.astro";
   />
 
   <body>
-    <Header />
+    <HEADER2 />
     <slot />
     <Footer />
   </body>

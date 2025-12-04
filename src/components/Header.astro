@@ -12,9 +12,9 @@ import "../styles/generel.css";
     <div>
       <nav>
         <ul class="menu">
+          <li><a href="/cycle#experience-section">EXPERIENCE</a></li>
+          <li><a href="/cycle#life-cycle-section">LIFE CYCLE</a></li>
           <li><a href="/guide">SORTING GUIDE</a></li>
-          <li><a href="/cycle">LIFE CYCLE</a></li>
-          <li><a href="/cycle">EXPERIENCE</a></li>
           <li><a href="/about">ABOUT US</a></li>
         </ul>
         <div class="burger">
@@ -35,7 +35,7 @@ import "../styles/generel.css";
   }
 
   .top {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
@@ -46,8 +46,22 @@ import "../styles/generel.css";
     margin-right: 10px; /* Juster afstanden mellem logoet og teksten efter behov */
   }
 
+  /* smooth scale on the image */
+  #main-logo {
+    display: block;
+    width: 100%;
+    transition: transform 180ms ease; /* gør animation glidende */
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  .logo:hover #main-logo,
+  #main-logo:hover {
+    transform: scale(1.86);
+  }
+
   header {
-    position: sticky;
+    position: relative;
     z-index: 100;
     display: flex;
     justify-content: space-between;
@@ -171,6 +185,11 @@ import "../styles/generel.css";
       justify-content: space-between;
       align-items: center;
     }
+  }
+
+  #life-cycle-section,
+  #experience-section {
+    scroll-margin-top: 100px; /* justér efter header-højde */
   }
 </style>
 

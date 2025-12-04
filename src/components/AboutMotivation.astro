@@ -1,0 +1,99 @@
+---
+import "../styles/generel.css";
+---
+
+<section class="about">
+  <div class="about-section__inner about-grid">
+    <div class="about-left">
+      <h1>
+        MOTIV-
+        <br />
+        ATION
+      </h1>
+      <!-- <div class="about-icon" aria-hidden="true">
+        <img src="/img/fist-outline.svg" alt="" loading="lazy" />
+      </div> -->
+    </div>
+
+    <div class="about-text">
+      <p>
+        Astemon was born from a simple observation: Lisbon is full of people who
+        want to do the right thing, but don’t always know how to.
+      </p>
+
+      <p>
+        <strong
+          >Tourists, expats, and exchange students often arrive eager to live
+          sustainably</strong
+        >, only to find that the city’s waste sorting system feels confusing,
+        fragmented, and mostly explained in Portuguese.
+      </p>
+
+      <p>
+        Our motivation was to bridge that gap. We wanted to create a space where
+        sustainability feels accessible, visual, and easy to understand, no
+        matter where you come from.
+      </p>
+
+      <p>
+        Astemon exists to turn everyday waste sorting into a shared act of care
+        for the city we all call home, even if only for a while!
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    border-bottom: 0.5px solid var(--ashbrown);
+  }
+  .about-section__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 3.25rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .about-title {
+    font-family: "Lexend Giga", system-ui, sans-serif;
+    font-size: 2.4rem;
+    letter-spacing: 0.22em;
+    line-height: 1.1;
+    margin: 0 0 2rem;
+  }
+
+  .about-icon img {
+    max-width: 180px;
+    opacity: 0.25;
+  }
+
+  .about-text p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    max-width: 40rem;
+  }
+
+  @media (max-width: 900px) {
+    .about-section__inner {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

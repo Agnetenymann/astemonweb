@@ -1,0 +1,132 @@
+---
+import DeItem from "./DeItem.astro";
+---
+
+<section class="decomp-section">
+  <div class="decomp-inner">
+    <div class="decomp-column">
+      <DeItem
+        title="PLASTIC BAG"
+        content="It takes about 10-20 years for a plastic bag to decompose, and why it matters. Plastic bags are not biodegradable. Instead, they gradually break down over time into smaller and smaller plastic particles."
+      />
+      <DeItem
+        title="BALLOON"
+        content="Balloons are often used at big celebrations. Unfortunately, we often forget the consequences that balloon releases have for nature. When a burst balloon falls back down, they can have a destructive impact on animals. Even though latex is biodegradable, the latex used in balloons is processed, and therefore takes up to 4 years to break down in nature."
+      />
+      <DeItem
+        title="CIGARETTE BUD"
+        content="It takes around 1–5 years for a cigarette butt to break down into microplastics. The filter is made from cellulose acetate, a non-biodegradable type of plastic that turns into microplastics."
+      />
+      <DeItem
+        title="ALUMINIUM CAN"
+        content="The decomposition time for metal in the form of aluminum cans is estimated to be up to 500 years."
+      />
+      <DeItem
+        title="ICE CREAM STICK"
+        content="Ice cream sticks made of wood are a natural and biodegradable material. However, the sticks are treated with a food-grade wax that prevents the ice cream from absorbing into the wood. Because of this treatment, an ice cream stick can take up to 10 years to break down in nature."
+      />
+    </div>
+
+    <div class="decomp-column">
+      <DeItem
+        title="CHEWING GUM"
+        content="There are different estimates for how long chewing gum takes to break down in nature. Some say 5 years, others 20–25 years, and others claim it is not biodegradable at all. This is because it is made from synthetic rubber, sharing many characteristics with other rubber-based products such as car tires and adhesives. Synthetic rubber is strong, elastic, and resistant to harsh chemicals. It is a powerful binding agent and retains its properties under all weather conditions."
+      />
+      <DeItem
+        title="FISHING LINE"
+        content="Fishing line can take up to 600 years to break down in nature. Its strong, synthetic material is designed to resist tension and harsh conditions, which makes it extremely slow to degrade."
+      />
+      <DeItem
+        title="PLASTIC BOTTLE"
+        content="PET plastic bottles are not biodegradable. Research suggests that a PET bottle stays intact for about 15 years before it begins breaking down into microplastic. Full degradation is estimated to take 400–1000 years, and scientists still don’t know whether microplastic ever fully disappears from nature."
+      />
+      <DeItem
+        title="PAPER BAG"
+        content="A paper bag is made from organic, water-soluble material, and because of this natural composition, it typically breaks down in the environment in about 1 month."
+      />
+      <DeItem
+        title="GLASS"
+        content="Glass is such a durable material that its estimated decomposition time is over 1 million years. Because it does not break down naturally in the environment, glass can remain intact for geological timescales unless it is physically shattered. This durability is also why recycling glass is so important, it can be melted down and reused endlessly without losing quality."
+      />
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", () => {
+    const accordions = document.querySelectorAll("[data-accordion-item]");
+
+    const closeAccordion = (acc) => {
+      const content = acc.querySelector(".decomp-content");
+      acc.classList.remove("is-open");
+      if (!content) return;
+      content.style.maxHeight = "0px";
+    };
+
+    const openAccordion = (acc) => {
+      const content = acc.querySelector(".decomp-content");
+      acc.classList.add("is-open");
+      if (!content) return;
+      // set exact height so the animation is smooth
+      content.style.maxHeight = content.scrollHeight + "px";
+    };
+
+    accordions.forEach((acc) => {
+      const summary = acc.querySelector(".decomp-summary");
+      const content = acc.querySelector(".decomp-content");
+      if (!summary || !content) return;
+
+      // start closed
+      content.style.maxHeight = "0px";
+
+      summary.addEventListener("click", () => {
+        const isOpen = acc.classList.contains("is-open");
+
+        if (isOpen) {
+          closeAccordion(acc);
+        } else {
+          openAccordion(acc);
+        }
+      });
+    });
+
+    // click outside → close all
+    document.addEventListener("click", (event) => {
+      const clickedInside = event.target.closest("[data-accordion-item]");
+      if (clickedInside) return;
+
+      accordions.forEach((acc) => {
+        if (acc.classList.contains("is-open")) {
+          closeAccordion(acc);
+        }
+      });
+    });
+  });
+</script>
+<style>
+  .decomp-section {
+    padding: 8rem 3rem;
+    background-color: var(--light_green);
+  }
+
+  .decomp-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 4rem;
+    row-gap: 1.5rem;
+  }
+
+  .decomp-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 800px) {
+    .decomp-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

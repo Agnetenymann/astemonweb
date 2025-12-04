@@ -1,13 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Banner from "../components/Banner.astro";
+import SortLinks from "../components/SortLinks.astro";
+import SortSection from "../components/SortSection.astro";
+import SortNav from "../components/SortNav.astro";
+import SortIntro2 from "../components/SortIntro2.astro";
 ---
 
 <Layout>
-  <h1>guide</h1>
-  <Banner
-    h3_1="SORTING GUIDE"
-    h3_2="WASTE EXPERIENCE"
-    h3_3="THE CYCLE OF LIFE"
-  />
+  <SortIntro2 />
+  <SortNav />
+  <SortSection />
+  <SortLinks />
 </Layout>

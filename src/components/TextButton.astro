@@ -2,13 +2,14 @@
 export interface Props {
   buttontext: string;
   buttonurl: string;
+  target?: string;
 }
 
-const { buttontext, buttonurl } = Astro.props;
+const { buttontext, buttonurl, target } = Astro.props;
 ---
 
 <div class="intro-cta">
-  <a href={buttonurl} class="outline-btn">
+  <a href={buttonurl} class="outline-btn" target={target}>
     {buttontext}
   </a>
 </div>
@@ -18,7 +19,6 @@ const { buttontext, buttonurl } = Astro.props;
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
   }
 
   .outline-btn {
@@ -55,7 +55,7 @@ const { buttontext, buttonurl } = Astro.props;
   @media (max-width: 900px) {
     .intro-cta {
       justify-content: flex-start;
-      margin-top: 2rem;
+      margin-top: 0.7rem;
     }
   }
 </style>

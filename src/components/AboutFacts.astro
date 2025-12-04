@@ -1,0 +1,117 @@
+---
+import "../styles/generel.css";
+---
+
+<section class="about-section about">
+  <div class="about-section__inner about-grid">
+    <div class="about-left">
+      <h1>
+        SORT-
+        <br />
+        ING <br />OUT THE FACTS
+      </h1>
+    </div>
+
+    <div class="about-facts__text">
+      <p>
+        Lisbon, like many growing cities, faces increasing waste management
+        challenges as tourism and international residency continue to rise.
+      </p><br />
+
+      <p>
+        According to Lisboa E-Nova, the city produces over 350,000 tonnes of
+        waste each year, and only a small percentage is properly sorted and
+        recycled (<a
+          href="https://observatorios-lisboa.pt/en/info_residuos.html"
+          target="_blank"
+          rel="noopener noreferrer">Lisboa E‑Nova, Urban Waste Dataset, 2023</a
+        >).
+      </p><br />
+
+      <p>
+        Across Portugal, the situation reflects an even larger issue: while the
+        country is known for its history, cuisine, and coastal beauty, it falls
+        short in recycling performance. EU data shows that only 29% of urban
+        waste in Portugal was recycled in 2019, compared to the European average
+        of 48% (<a
+          href="https://www.eea.europa.eu/en/analysis/indicators/waste-recycling-in-europe"
+          target="_blank"
+          rel="noopener noreferrer">European Environment Agency, 2019</a
+        >).
+      </p><br />
+
+      <p>
+        These numbers highlight an urgent need for accessible education and
+        better recycling practices — especially among newcomers who want to
+        contribute but lack clear information.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background-color: var(--light-green);
+    border-bottom: 0.5px solid var(--ashbrown);
+  }
+  .about-section__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 3.25rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .about-title {
+    font-family: "Lexend Giga", system-ui, sans-serif;
+    font-size: 2.4rem;
+    letter-spacing: 0.22em;
+    line-height: 1.1;
+    margin: 0 0 2rem;
+  }
+
+  .about-icon img {
+    max-width: 180px;
+    opacity: 0.25;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  a:hover {
+    font-weight: 500;
+  }
+
+  .about-text p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    max-width: 40rem;
+  }
+
+  @media (max-width: 900px) {
+    .about-section__inner {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .about-title {
+      font-size: 2rem;
+    }
+  }
+</style>

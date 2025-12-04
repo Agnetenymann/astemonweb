@@ -38,7 +38,7 @@ import "../styles/generel.css";
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
-                <line x1="-1" y1="16" x2="19" y2="12"></line>
+                <line x1="-1" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </button>
@@ -69,11 +69,15 @@ import "../styles/generel.css";
           <h3 class="Footer_heading">EXPLORE</h3>
           <ul class="Footer_list">
             <li>
-              <a href="/cycle" class="Footer_link">INTERACTIVE EXPERIENCE →</a>
+              <a href="/cycle#experience-section" class="Footer_link"
+                >INTERACTIVE EXPERIENCE →</a
+              >
             </li>
             <li><a href="/guide" class="Footer_link">RECYCLING GUIDE →</a></li>
             <li>
-              <a href="/cycle" class="Footer_link">LIFE CYCLE OF WASTE →</a>
+              <a href="/cycle#life-cycle-section" class="Footer_link"
+                >LIFE CYCLE OF WASTE →</a
+              >
             </li>
             <li><a href="/about" class="Footer_link">ABOUT US →</a></li>
           </ul>
@@ -106,6 +110,11 @@ import "../styles/generel.css";
     padding: 6rem 1rem 1.5rem;
     padding-bottom: 0.8rem;
     font-family: "Archivo Narrow", sans-serif;
+  }
+
+  h3,
+  p {
+    color: var(--green);
   }
 
   /* Indre container */
