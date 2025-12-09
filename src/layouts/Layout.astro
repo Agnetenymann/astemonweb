@@ -16,44 +16,69 @@ import HEADER2 from "../components/HEADER2.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <title>ASTEMON</title>
-  </head>
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    /><link rel="preconnect" href="https://fonts.googleapis.com" /><link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap"
+      rel="stylesheet"
+    /><link rel="preconnect" href="https://fonts.googleapis.com" /><link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&display=swap"
+      rel="stylesheet"
+    /><link rel="preconnect" href="https://fonts.googleapis.com" /><link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    /></head
+  >
   <!-- google fonts -->
   <!-- roboto -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet"
-  />
+
   <!-- Lexend Giga -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap"
-    rel="stylesheet"
-  />
 
   <!-- Lexend mega -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&display=swap"
-    rel="stylesheet"
-  />
 
   <!-- Archivo narrow -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap"
-    rel="stylesheet"
-  />
 
   <body>
     <HEADER2 />
     <slot />
     <Footer />
   </body>
+
+  <!-- AOS (Animate On Scroll) JS -->
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    function initAOS() {
+      if (typeof window !== "undefined" && (window as any).AOS) {
+        (window as any).AOS.init({ duration: 600, once: true });
+      }
+    }
+    // init on DOMContentLoaded
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initAOS);
+    } else {
+      initAOS();
+    }
+  </script>
 </html>
 
 <style>

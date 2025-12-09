@@ -5,7 +5,7 @@ import BoxButton from "./BoxButton.astro";
 
 <section class="experience-hero" id="experience-section">
   <div class="experience-inner">
-    <div class="experience-text">
+    <div class="experience-text" data-aos="fade-right">
       <h2>LEARNING BY DOING</h2>
 
       <h3 class="experience-subtitle">
@@ -61,6 +61,8 @@ import BoxButton from "./BoxButton.astro";
 
   .experience-text {
     max-width: 660px;
+    position: relative;
+    z-index: 2; /* sikrer tekst ligger over billedet */
   }
 
   .experience-subtitle {
@@ -80,6 +82,7 @@ import BoxButton from "./BoxButton.astro";
     z-index: 1;
     justify-content: center;
     margin-left: -10rem;
+    pointer-events: none; /* tillader klik gennem animering */
   }
 
   .experience-graphic img {
