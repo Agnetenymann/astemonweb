@@ -1,5 +1,10 @@
 ---
-const { title, content } = Astro.props;
+interface Props {
+  title: string;
+  content: string;
+}
+
+const { title, content } = Astro.props as Props;
 ---
 
 <div class="decomp-accordion" data-accordion-item>
@@ -8,7 +13,7 @@ const { title, content } = Astro.props;
     <span class="decomp-plus">+</span>
   </button>
   <div class="decomp-content">
-    <p>{content}</p>
+    <p set:html={content} />
   </div>
 </div>
 
@@ -71,6 +76,11 @@ const { title, content } = Astro.props;
     margin: 0.25rem 0 0.5rem;
     font-size: 0.95rem;
     line-height: 1.6;
+  }
+
+  .decomp-content strong {
+    font-weight: 600;
+    color: var(--ashbrown); /* eller anden farve */
   }
 
   /* when open – we set max-height in JS to exact scrollHeight */
