@@ -6,7 +6,25 @@ import Welcome from "../components/Welcome.astro";
 ---
 
 <Layout>
-  <div class="hero_div"></div>
+  <section class="hero_div" aria-hidden="true">
+    <video
+      class="hero_video"
+      src="/astemon-kopi.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"></video>
+
+    <!-- brand tint overlay -->
+    <div class="hero_overlay" aria-hidden="true"></div>
+
+    <!-- scroll CTA -->
+    <a href="#scrolling-banner" class="hero_cta" aria-label="Scroll to banner">
+      <span class="hero_cta_text">SCROLL DOWN</span>
+      <span class="hero_cta_arrow" aria-hidden="true">▾</span>
+    </a>
+  </section>
   <Banner
     h3_1="SORTING GUIDE"
     h3_2="WASTE EXPERIENCE"
@@ -17,9 +35,155 @@ import Welcome from "../components/Welcome.astro";
 </Layout>
 
 <style>
+  /* smooth anchor scrolling (CSS-first) */
+  html {
+    scroll-behavior: smooth;
+  }
+
   .hero_div {
-    height: 880px;
-    background-color: var(--green);
-    margin-top: -100px;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* fylder hele skærmens højde */
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .hero_video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+  /* 
+  .hero_overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: var(--green);
+    opacity: 0.3;
+    mix-blend-mode: screen;
+  } */
+
+  .hero_cta {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family:
+      Archivo Narrow,
+      sans-serif;
+    z-index: 20;
+    pointer-events: auto;
+    color: var(--green);
+  }
+
+  .hero_cta_arrow {
+    display: block;
+    font-size: 3rem;
+    opacity: 0.9;
+    margin-top: -1rem;
+  }
+
+  /* small responsive tweak */
+  @media (max-width: 600px) {
+    .hero_cta {
+      bottom: 24px;
+    }
+    .hero_cta_text {
+      font-size: 0.8rem;
+    }
+  }
+
+  .container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+  }
+
+  .chevron {
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+  }
+
+  .chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+  }
+
+  .chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+  }
+
+  .chevron:before,
+  .chevron:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: var(--green);
+  }
+
+  .chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+  }
+
+  .chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+  }
+
+  .tekst_praktisk {
+    margin-bottom: 0px;
+  }
+
+  @keyframes move {
+    25% {
+      opacity: 1;
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
   }
 </style>
+
+<script>
+  // fallback smooth scroll for browsers that don't support CSS smooth scrolling
+  (function () {
+    const cta = document.querySelector(".hero_cta");
+    const target = document.getElementById("scrolling-banner");
+    if (!cta || !target) return;
+    cta.addEventListener("click", (e) => {
+      // allow normal anchor if browser supports CSS smooth scroll
+      if ("scrollBehavior" in document.documentElement.style) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth" });
+    });
+  })();
+</script>
