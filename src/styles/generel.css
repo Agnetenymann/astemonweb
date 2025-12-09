@@ -32,7 +32,7 @@ p {
   font-weight: 400;
   font-style: light;
   color: var(--ashbrown);
-  font-size: 0.9rem;
+  font-size: 1.05rem;
 }
 
 h1 {
@@ -65,7 +65,7 @@ h3 {
   font-weight: 400;
   font-size: 1rem;
   color: var(--ashbrown);
-  margin-top: 1rem;
+  margin-top: 0.7rem;
   margin-bottom: 0.8rem;
 }
 
