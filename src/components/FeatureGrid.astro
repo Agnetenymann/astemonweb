@@ -1,0 +1,106 @@
+---
+import "../styles/generel.css";
+import BoxButton from "./BoxButton.astro";
+---
+
+<section class="feature-section">
+  <div class="feature-grid">
+    <article class="feature-card">
+      <h3 class="feature-title">
+        SORT-<br />
+        ING<br />
+        GUIDE
+      </h3>
+      <BoxButton buttontext="GO TO GUIDE" buttonurl="/guide" maxWidth="auto" />
+    </article>
+
+    <article class="feature-card">
+      <h3 class="feature-title">
+        EXPERI-<br />
+        ENCE
+      </h3>
+
+      <BoxButton
+        buttontext="GO TO EXPERIENCE"
+        buttonurl="/cycle"
+        maxWidth="auto"
+      />
+    </article>
+
+    <article class="feature-card">
+      <h3 class="feature-title">
+        THE<br />
+        CYCLE<br />
+        OF LIFE
+      </h3>
+
+      <BoxButton buttontext="GO TO CYCLE" buttonurl="/cycle" maxWidth="auto" />
+    </article>
+  </div>
+</section>
+
+<style>
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--ashbrown);
+    border-bottom: 1px solid var(--ashbrown);
+  }
+
+  .feature-card {
+    background-color: var(--green);
+    min-height: 420px; /* height you want on desktop */
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* title at top, btn at bottom */
+    border-left: 1px solid var(--ashbrown);
+  }
+
+  .feature-card:first-child {
+    border-left: none;
+  }
+
+  .feature-title {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+    font-family:
+      lexend giga,
+      sans-serif;
+    font-weight: 400;
+    font-size: 3.8rem;
+    color: var(--ashbrown);
+  }
+
+  @media (max-width: 1250px) {
+    .feature-title {
+      font-size: 2.9rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+      border-left: none;
+      border-top: 1px solid var(--ashbrown);
+      min-height: 320px; /* height you want on desktop */
+    }
+
+    .feature-card:first-child {
+      border-top: none;
+    }
+
+    .outline-btn--wide {
+      width: auto;
+    }
+
+    .feature-title {
+      font-size: 2rem;
+    }
+  }
+</style>

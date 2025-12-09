@@ -1,11 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
+import Welcome from "../components/Welcome.astro";
 ---
 
 <Layout>
-	<h1>hello</h1>
-
+  <div class="hero_div"></div>
+  <Banner
+    h3_1="SORTING GUIDE"
+    h3_2="WASTE EXPERIENCE"
+    h3_3="THE CYCLE OF LIFE"
+  />
+  <Welcome />
+  <FeatureGrid />
 </Layout>
+
+<style>
+  .hero_div {
+    height: 880px;
+    background-color: var(--green);
+    margin-top: -100px;
+  }
+</style>

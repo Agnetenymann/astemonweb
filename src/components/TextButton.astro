@@ -1,0 +1,61 @@
+---
+export interface Props {
+  buttontext: string;
+  buttonurl: string;
+  target?: string;
+}
+
+const { buttontext, buttonurl, target } = Astro.props;
+---
+
+<div class="intro-cta">
+  <a href={buttonurl} class="outline-btn" target={target}>
+    {buttontext}
+  </a>
+</div>
+
+<style>
+  .intro-cta {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .outline-btn {
+    position: relative; /* vigtigt for ::after */
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    color: var(--ashbrown);
+    font-family: "Archivo Narrow", sans-serif;
+  }
+
+  /* fake underline der kan animeres */
+  .outline-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px; /* afstand fra tekst */
+    height: 1px;
+    width: 100%;
+    background-color: var(--ashbrown);
+
+    transform: scaleX(0); /* start: skjult */
+    transform-origin: left;
+    transition: transform 0.3s ease; /* smooth animation */
+  }
+
+  /* hover: vis underline */
+  .outline-btn:hover::after {
+    transform: scaleX(1);
+  }
+
+  @media (max-width: 900px) {
+    .intro-cta {
+      justify-content: flex-start;
+      margin-top: 0.7rem;
+    }
+  }
+</style>

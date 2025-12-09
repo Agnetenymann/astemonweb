@@ -20,7 +20,7 @@ html {
   --green: #d0ffcd;
   --ashbrown: #5f5454;
   --taupe: #9b9886;
-  --light_green: #e9f0e6;
+  --light_green: #f7fff4;
   --white: #fffffa;
   scroll-behavior: smooth;
   width: 100vw;
@@ -31,4 +31,56 @@ p {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: light;
+  color: var(--ashbrown);
+  font-size: 1.05rem;
+}
+
+h1 {
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.3;
+  font-family:
+    lexend giga,
+    sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color: var(--ashbrown);
+  margin-bottom: 1rem;
+  margin-left: -0.4rem;
+}
+
+h2 {
+  font-family: "Archivo Narrow", sans-serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: var(--ashbrown);
+}
+
+h3 {
+  margin: 0;
+  line-height: 1.3;
+  font-family:
+    lexend giga,
+    sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--ashbrown);
+  margin-top: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 800px) {
+  p {
+    font-size: 0.7rem;
+  }
+
+  h3 {
+    font-size: 0.7rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
 }

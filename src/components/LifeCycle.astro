@@ -1,0 +1,111 @@
+---
+import "../styles/generel.css";
+---
+
+<!-- src/components/DecompositionGrid.astro -->
+<section class="decomp-section">
+  <div class="decomp-inner">
+    <div class="decomp-column">
+      <button type="button" class="decomp-row">
+        <span class="decomp-label">PLASTIC BAG</span>
+        <span class="decomp-plus">+</span>
+      </button>
+
+      <button type="button" class="decomp-row">
+        <span class="decomp-label">BALLOON</span>
+        <span class="decomp-plus">+</span>
+      </button>
+
+      <button type="button" class="decomp-row">
+        <span class="decomp-label">CIGARETTE BUD</span>
+        <span class="decomp-plus">+</span>
+      </button>
+
+      <button type="button" class="decomp-row">
+        <span class="decomp-label">ALUMINIUM CAN</span>
+        <span class="decomp-plus">+</span>
+      </button>
+
+      <button type="button" class="decomp-row">
+        <span class="decomp-label">YELLOW BINS</span>
+        <span class="decomp-plus">+</span>
+      </button>
+    </div>
+
+    <div class="decomp-column">
+      <button type="button" class="decomp-row">
+        <span class="decomp-label">GUM</span>
+        <span class="decomp-plus">+</span>
+      </button>
+
+      <button type="button" class="decomp-row">
+        <span class="decomp-label">FISHING LINE</span>
+        <span class="decomp-plus">+</span>
+      </button>
+
+      <button type="button" class="decomp-row">
+        <span class="decomp-label">PLASTIC BOTTLE</span>
+        <span class="decomp-plus">+</span>
+      </button>
+
+      <button type="button" class="decomp-row">
+        <span class="decomp-label">PAPER BAG</span>
+        <span class="decomp-plus">+</span>
+      </button>
+
+      <button type="button" class="decomp-row">
+        <span class="decomp-label">GLASS</span>
+        <span class="decomp-plus">+</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .decomp-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .decomp-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 4rem;
+    row-gap: 2rem;
+  }
+
+  .decomp-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .decomp-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 0 0.5rem;
+    border: none;
+    border-bottom: 1px solid currentColor;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .decomp-label {
+    text-transform: uppercase;
+  }
+
+  .decomp-plus {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 800px) {
+    .decomp-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

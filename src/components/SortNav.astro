@@ -1,0 +1,131 @@
+---
+import "../styles/generel.css";
+---
+
+<section class="hero" id="sorting-guide">
+  <div class="hero__inner">
+    <div class="grid_1-1">
+      <h1>LET’S <br />SORT</h1>
+      <ul class="hero__links">
+        <li>
+          <a href="#blue-bin" class="outline-btn">PAPER & CARDBOARD →</a>
+        </li>
+        <li>
+          <a href="#yellow-bin" class="outline-btn">PLASTIC OR METAL →</a>
+        </li>
+        <li><a href="#green-bin" class="outline-btn">GLASS →</a></li>
+        <li><a href="#grey-bin" class="outline-btn">GENERAL WASTE →</a></li>
+        <li><a href="#brown-bin" class="outline-btn">ORGANIC →</a></li>
+        <li>
+          <a href="#external-links" class="outline-btn">EXTERNAL LINKS →</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<style>
+  .hero {
+    background-color: var(--green);
+  }
+
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 0.2rem;
+    align-items: center;
+  }
+
+  .hero__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 0rem 3rem;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero__text {
+    z-index: 1;
+  }
+
+  .hero__sub {
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: var(--ashbrown);
+  }
+
+  .hero__lets-sort {
+    position: relative;
+    display: flex;
+    gap: 4rem;
+  }
+
+  .hero__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  /* buttons for navigation trash */
+  .outline-btn {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    color: var(--ashbrown);
+    font-family: "Archivo Narrow", sans-serif;
+  }
+
+  .outline-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 1px;
+    width: 100%;
+    background-color: var(--ashbrown);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .outline-btn:hover::after {
+    transform: scaleX(1);
+  }
+
+  @media (max-width: 800px) {
+    .hero__inner {
+      gap: 2.5rem;
+      padding: 3rem 3rem 3rem;
+    }
+
+    .hero__inner2 {
+      gap: 2.5rem;
+      padding: 1rem 3rem 3rem;
+    }
+    .hero__lets-sort {
+      gap: 1.5rem;
+    }
+
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 0.2rem;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-top: -6rem;
+    }
+  }
+</style>

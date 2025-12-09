@@ -1,0 +1,128 @@
+---
+import "../styles/generel.css";
+import BoxButton from "./BoxButton.astro";
+---
+
+<section class="experience-hero" id="experience-section">
+  <div class="experience-inner">
+    <div class="experience-text">
+      <h2>HOW TO SORT YOUR WASTE LIKE A PRO</h2>
+
+      <h3 class="experience-subtitle">
+        Not sure what goes where? Don’t worry — we’ve got you!
+      </h3>
+      <p style="margin-bottom: 2rem;">
+        Sorting waste in a new city can be confusing, but it doesn’t have to be.
+        This guide gives you a quick and easy overview of how to sort the most
+        common types of waste in Lisbon — from glass bottles to paper,
+        packaging, and organics.
+        <br /><br />
+        Perfect for you who want to keep the city clean and do your part for a more
+        sustainable Lisbon (no dictionary needed!).
+      </p>
+
+      <BoxButton
+        buttontext="START SORTING NOW"
+        buttonurl="/guide#sorting-guide"
+        maxWidth="auto"
+      />
+    </div>
+
+    <div class="experience-graphic">
+      <img src="/img/globe.svg" alt="logo" class="pulse" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-hero {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--white);
+    border-bottom: 0.5px solid var(--ashbrown);
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .experience-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    /* align-items: center; */
+    margin-top: 13rem;
+    margin-bottom: 5rem;
+  }
+
+  .experience-text {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+  }
+
+  p {
+    max-width: 600px;
+  }
+
+  .experience-subtitle {
+    margin: 0;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    font-family:
+      lexend giga,
+      sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--ashbrown);
+  }
+
+  .experience-graphic {
+    flex: 1;
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    margin-left: -10rem;
+  }
+
+  .experience-graphic img {
+    width: 540px;
+    z-index: -1;
+    height: auto;
+    display: block;
+    animation: pulse_kf 3s alternate-reverse infinite;
+    transform-origin: center;
+  }
+
+  @keyframes pulse_kf {
+    from {
+      scale: 1;
+    }
+    to {
+      scale: 0.9;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .experience-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 6rem;
+      margin-bottom: 3rem;
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+
+    .experience-graphic {
+      justify-content: flex-start;
+      margin-left: 14rem;
+      margin-bottom: 2rem;
+    }
+
+    .experience-graphic img {
+      width: 200px;
+      animation: none;
+      margin-top: -6rem;
+    }
+  }
+</style>

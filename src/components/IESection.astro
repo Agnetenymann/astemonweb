@@ -1,0 +1,128 @@
+---
+import "../styles/generel.css";
+import BoxButton from "./BoxButton.astro";
+---
+
+<section class="experience-hero" id="experience-section">
+  <div class="experience-inner">
+    <div class="experience-text">
+      <h2>LEARNING BY DOING</h2>
+
+      <h3 class="experience-subtitle">
+        Have you ever wondered what it’s like to be a piece of trash?
+      </h3>
+
+      <p style="margin-bottom: 1.7rem;">
+        In this interactive experience, you become the trash! Make choices about
+        where you go – are you recycled, reused, or sent to landfill? See what
+        happens when waste is sorted correctly (or not), and learn how every
+        small decision shapes Lisbon’s circular future.
+      </p>
+
+      <BoxButton
+        buttontext="START THE EXPERIENCE"
+        buttonurl="/cycle"
+        maxWidth="auto"
+      />
+    </div>
+
+    <div class="experience-graphic">
+      <img src="/img/logo_giant.svg" alt="logo" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-hero {
+    padding: 10rem 1.5rem;
+    padding-top: 6rem;
+    background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  h2,
+  h3,
+  p {
+    position: relative;
+    z-index: 2;
+  }
+
+  .experience-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .experience-text {
+    max-width: 660px;
+  }
+
+  .experience-subtitle {
+    margin: 0;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    font-family:
+      lexend giga,
+      sans-serif;
+    font-weight: 400;
+    color: var(--ashbrown);
+  }
+
+  .experience-graphic {
+    flex: 1;
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    margin-left: -10rem;
+  }
+
+  .experience-graphic img {
+    width: 130%;
+    height: auto;
+    display: block;
+    animation: spin 35s linear infinite;
+    opacity: 0.8;
+    transform-origin: center;
+  }
+
+  /* Smooth endless rotation */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .experience-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .experience-hero {
+      padding: 2rem 3rem;
+      padding-top: 6rem;
+    }
+
+    .experience-graphic {
+      position: static; /* normal flow på mobil */
+      transform: none;
+      margin-bottom: 2rem;
+    }
+
+    .experience-graphic img {
+      max-width: 200px;
+      animation: none;
+      margin-top: -6rem;
+      margin-left: 20rem;
+    }
+  }
+</style>

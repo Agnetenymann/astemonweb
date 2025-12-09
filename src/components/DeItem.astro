@@ -1,0 +1,81 @@
+---
+const { title, content } = Astro.props;
+---
+
+<div class="decomp-accordion" data-accordion-item>
+  <button class="decomp-summary" type="button">
+    <span class="decomp-label">{title}</span>
+    <span class="decomp-plus">+</span>
+  </button>
+  <div class="decomp-content">
+    <p>{content}</p>
+  </div>
+</div>
+
+<style>
+  .decomp-accordion {
+    padding: 0;
+  }
+
+  .decomp-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    padding: 0 0 0.5rem;
+    margin-bottom: 0.25rem;
+    border: none;
+    border-bottom: 1px solid currentColor;
+    background: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .decomp-label {
+    text-transform: uppercase;
+    font-family:
+      archivo narrow,
+      sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--ashbrown);
+  }
+
+  .decomp-plus {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1;
+    transition: transform 0.25s ease;
+  }
+
+  /* plus → X når åben */
+  .decomp-accordion.is-open .decomp-plus {
+    transform: rotate(45deg);
+  }
+
+  /* smooth content animation */
+  .decomp-content {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition:
+      max-height 0.35s ease,
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .decomp-content p {
+    margin: 0.25rem 0 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* when open – we set max-height in JS to exact scrollHeight */
+  .decomp-accordion.is-open .decomp-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
