@@ -19,9 +19,20 @@ import Welcome from "../components/Welcome.astro";
     <!-- brand tint overlay -->
     <div class="hero_overlay" aria-hidden="true"></div>
 
+    <!-- hero graphic (SVG) -->
+    <img
+      src="/img/hero_graphic.svg"
+      alt=""
+      class="hero_graphic"
+      loading="lazy"
+      width="800"
+      height="600"
+      aria-hidden="true"
+    />
+
     <!-- scroll CTA -->
     <a href="#scrolling-banner" class="hero_cta" aria-label="Scroll to banner">
-      <span class="hero_cta_text">SCROLL DOWN</span>
+      <span class="hero_cta_text">EXPLORE</span>
       <span class="hero_cta_arrow" aria-hidden="true">▾</span>
     </a>
   </section>
@@ -69,6 +80,29 @@ import Welcome from "../components/Welcome.astro";
     mix-blend-mode: screen;
   }
 
+  .hero_graphic {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    z-index: 10;
+    pointer-events: none;
+    animation: pulse-scale 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-scale {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.03);
+    }
+  }
+
   .hero_cta {
     position: absolute;
     left: 50%;
@@ -82,10 +116,11 @@ import Welcome from "../components/Welcome.astro";
     font-family:
       Archivo Narrow,
       sans-serif;
-    z-index: 20;
+    z-index: 20; /* sikrer button ligger over grafik */
     pointer-events: auto;
     color: var(--green);
     transition: all 300ms ease; /* smooth transition for hover */
+    font-size: 1.1rem;
   }
 
   .hero_cta:hover {
@@ -120,6 +155,9 @@ import Welcome from "../components/Welcome.astro";
 
   /* small responsive tweak */
   @media (max-width: 600px) {
+    .hero_graphic {
+      max-width: 90%;
+    }
     .hero_cta {
       bottom: 24px;
     }
