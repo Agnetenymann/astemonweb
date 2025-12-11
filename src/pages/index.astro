@@ -45,6 +45,15 @@ import Welcome from "../components/Welcome.astro";
   <FeatureGrid />
 </Layout>
 
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.querySelector(".hero_video");
+    if (video) {
+      video.playbackRate = 0.7; // 0.5 = halvt tempo, 0.7 = 35% langsommere, 1 = normal
+    }
+  });
+</script>
+
 <style>
   /* smooth anchor scrolling (CSS-first) */
   html {
