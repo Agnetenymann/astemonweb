@@ -5,13 +5,19 @@ export interface Props {
   buttontext: string;
   buttonurl: string;
   maxWidth: string;
+  target: string;
 }
 
-const { buttontext, buttonurl, maxWidth } = Astro.props;
+const { buttontext, buttonurl, maxWidth, target } = Astro.props;
 const btnStyle = `max-width: ${maxWidth};`;
 ---
 
-<a href={buttonurl} class="outline-btn outline-btn--wide" style={btnStyle}>
+<a
+  href={buttonurl}
+  class="outline-btn outline-btn--wide"
+  style={btnStyle}
+  target={target}
+>
   <span class="btn-text">{buttontext}</span>
   <span class="btn-arrow">→</span>
 </a>
